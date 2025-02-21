@@ -1,0 +1,144 @@
+.brand-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    border: 3px solid darkblue;
+}
+
+.brand-letter {
+    width: 50%;
+    height: 50%;
+}
+
+.first-letter, .second-letter{
+    fill: #2A49B9;
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-anchor: middle;
+    offset-rotate: 0deg;
+}
+
+.first-letter {
+    margin-top: -40%;
+    offset-path: path("M50 50 L100 100");
+    fill: rgb(51, 51, 51);
+}
+
+.second-letter {
+    margin-top: 40%;
+    offset-path: path("M50 50 L0 0");
+    fill: rgb(100, 100, 255);
+}
+
+.first-letter-circle {
+    offset-path: path("M38 40H34L10.5 13V34L17.5 37L16 40H1.5V37L6 33.5V7L0.5 4L2.5 0.5L11 1L34 27V6.5L27 4L28.5 0.5L43 1V3.5L38 7.5V40Z");
+    opacity: 0;
+    animation: none;
+    animation-duration: 3s;
+}
+
+.second-letter-circle {
+    offset-path: path("M13 41H2V38L6.5 34.5V6.50001L1 5.00001L3 1.50001H15H20C22.7337 1.50001 24.3053 1.03994 27 1.50001C29.4347 1.91568 30.8253 2.32903 33 3.50001C37.0136 5.66116 39.0695 7.87051 41 12C42.836 15.9276 43.2034 18.7219 42.5 23C41.7916 27.3083 40.3011 29.6507 37.5 33C35.0937 35.8773 33.3487 37.3103 30 39C26.2368 40.8988 23.7118 41.332 19.5 41.5C16.9561 41.6015 13 41 13 41Z");
+    opacity: 0;
+    animation: none;
+    animation-duration: 4s;
+}
+
+.image-text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    opacity: 0;
+}
+
+.image-text-box .text {
+    font-family: 'Monotype Corsiva', sans-serif;
+    font-size: 27px;
+    color: #2A49B9;
+    z-index: 1;
+    margin-top: 40%;
+}
+
+.image-text-box img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@keyframes moveCircle {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+@keyframes moveToCenter {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateY(-3px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateY(3px);
+    }
+}
+
+.brand-box:hover #circle {
+    opacity: 1;
+    animation-name: moveCircle;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.brand-box:focus .brand-letter {
+    animation: moveToCenter 2s forwards, fade-out 2s 2s forwards;
+}
+
+.brand-box:focus .image-text-box {
+    animation: fade-in 6s 2s forwards;
+}
+
+.brand-box:focus {
+    animation: shake 1s 5s forwards;
+}
+

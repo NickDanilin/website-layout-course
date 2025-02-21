@@ -1,0 +1,59 @@
+.logo-css {
+    width: 70px;
+    height: 70px;
+}
+
+.logo-circle {
+    margin-top: 4px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    outline: 3px solid darkblue;
+    border-radius: 50%;
+}
+
+.letter_N {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 33px;
+    background-color: darkblue;
+    width: 3px;
+    height: 30px;
+}
+
+.letter_N::before {
+    content: "";
+    display: inherit;
+    outline: 2px solid darkblue;
+    border-radius: 50%;
+    width: 25px;
+    height: 50px;
+    margin-top: -22px;
+    margin-left: -25px;
+    clip-path: polygon(130% 120%, 46% 110%, 46% 44%, 110% 45%);
+}
+
+.letter_N::after {
+    content: "";
+    display: inherit;
+    outline: 2px solid darkblue;
+    border-radius: 50%;
+    width: 20px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left:  3px;
+    clip-path: polygon(-30% -20%, 54% -10%, 54% 56%, -10% 55%);
+}
+.letter_D {
+    content: "";
+    display: inherit;
+    border-radius: 50%;
+    border: 2px solid darkblue;
+    width: 33px;
+    height: 33px;
+    margin-top: 10px;
+    margin-left: 16px;
+    clip-path: inset(0 0 0 50%);
+}
+

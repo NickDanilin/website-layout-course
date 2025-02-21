@@ -1,0 +1,290 @@
+.pic_box {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    background: rgb(222, 177, 82);
+    background: radial-gradient(circle at left top, rgba(222, 177, 82, 1) 0%, rgba(255, 255, 255, 1) 80%);
+}
+
+.sun {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #deb152;
+    width: 35%;
+    height: 35%;
+    left: -5%;
+    top: -10%;
+}
+
+.grass {
+    position: absolute;
+    background: rgb(126, 240, 198);
+    background: linear-gradient(90deg, rgba(126, 240, 198, 1) 0%, rgba(255, 255, 255, 1) 33%, rgba(62, 131, 48, 1) 66%, rgba(180, 241, 179, 1) 100%);
+    width: 100%;
+    height: 37%;
+    top: 65%;
+    z-index: 1;
+}
+
+.grass_container {
+    position: relative;
+    box-sizing: border-box;
+    height: 30%;
+    width: 100%;
+    top: 77%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.grass_circle {
+    position: relative;
+    height: 100%;
+    width: 10%;
+    border-radius: 50%;
+    border: 3px solid #5BC245;
+    transform: scale(120%);
+}
+
+.dog {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 35%;
+    top: 50%;
+}
+
+.dog_body {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43%;
+    height: 28%;
+    border: 1px solid #6b3f1b;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle at 30% 90%, rgb(206, 168, 132) -20%, rgba(107, 63, 27, 1) 70%);
+    z-index: 1;
+}
+
+.dog_head {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 25%;
+    border-radius: 50%;
+    left: -5%;
+    top: -2%;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle at 50% 70%, rgb(206, 168, 132) 0%, rgba(107, 63, 27, 1) 65%);
+    z-index: 2;
+}
+
+.dog_eye {
+    position: relative;
+    display: flex;
+    top: 5%;
+    margin-inside: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    align-items: center;
+    width: 23%;
+    height: 27%;
+    background: #d5d5d5;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.dog_eye::before {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    content: '';
+    width: 70%;
+    height: 70%;
+    background: #403e3e;
+    border-radius: 100%;
+}
+
+
+.eye_brow {
+    position: absolute;
+    background: #403e3e;
+    width: 20%;
+    height: 5%;
+    border-radius: 70%;
+    margin-top: -25%;
+    z-index: 3;
+}
+
+.eye_brow.left {
+    transform: rotate(350deg);
+    margin-left: -47%;
+}
+
+.eye_brow.right {
+    transform: rotate(25deg);
+    margin-left: 45%;
+}
+
+.dog_ear {
+    position: absolute;
+    background: #7d512a;
+    border: 1px solid #6B3F1BFF;
+    width: 45%;
+    height: 45%;
+    border-radius: 50%;
+    margin-top: -55%;
+    z-index: 3;
+}
+
+.dog_ear.left {
+    margin-left: -90%;
+}
+
+.dog_ear.right {
+    margin-left: 90%;
+}
+
+.dog_mouth {
+    position: absolute;
+    background: #82542b;
+    width: 45%;
+    height: 44%;
+    border: 2px solid #6B3F1BFF;
+    border-radius: 45%;
+    margin-top: 105%;
+    margin-left: -30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dog_mouth.right {
+    margin-left: 30%;
+}
+
+.mouth_dots {
+    width: 10%;
+    height: 10%;
+    background: #403e3e;
+    border-radius: 50%;
+    margin-left: -60%;
+}
+
+.mouth_dots::before {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background: #403e3e;
+    border-radius: 50%;
+    margin-left: 30%;
+}
+
+.mouth_dots::after {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background: #403e3e;
+    border-radius: 50%;
+    margin-left: 15%;
+    margin-top: 30%;
+}
+
+.dog_nose {
+    position: absolute;
+    margin-top: 62%;
+    margin-left: -5%;
+    border-style: solid;
+    border-width: 10px 6px 0 6px;
+    border-color: #3B2511 transparent transparent transparent;
+    transform: rotate(4deg);
+}
+
+.dog_paw {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #774C28;
+    width: 10.5%;
+    height: 12.5%;
+    border-radius: 40%;
+    transform: scale(90%);
+    z-index: 10;
+    top: 18%;
+    overflow: hidden;
+}
+
+.one {
+    left: -11.5%;
+    margin-top: -2%;
+}
+
+.three {
+    left: -1.2%;
+}
+
+.four {
+    left: -2.4%;
+    margin-top: -0.3%;
+}
+
+.nail {
+    position: absolute;
+    background: #452D18;
+    width: 12%;
+    height: 40%;
+    border-radius: 40%;
+    top: 60%;
+}
+
+.nail::before, .nail::after {
+    content: '';
+    position: absolute;
+    background: #452D18;
+    border-radius: 40%;
+    width: 100%;
+    height: 100%;
+}
+
+.nail::before {
+    left: -140%;
+    top: 5%;
+}
+
+.nail::after {
+    left: 135%;
+}
+
+.tail {
+    position: relative;
+    width: 13.5%;
+    height: 15%;
+    left: -10%;
+    top: -6%;
+    z-index: 2;
+}
+
+.tail::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 3px 3px 0 0 #6b3f1b;
+    transform: rotate(24deg);
+}
+
+.dog {
+    display: flex;
+}
