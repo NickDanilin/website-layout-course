@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Порядок чисел</title>
+  <link rel="stylesheet" href="coursework.css">
+</head>
+<body>
+<!-- Начальный экран -->
+<div class="screen active" id="start-screen">
+  <h1>Математическая игра</h1>
+  <input type="text" id="player-name" placeholder="Введите ваше имя">
+  <button onclick="startGame()">Начать игру</button>
+  <button onclick="goToLevelSelection()">Выбор уровня</button>
+  <button onclick="viewLeaderboard()">Рейтинг игроков</button>
+  <button onclick="clearLeaderboard()">Сброс рейтинга</button>
+</div>
+
+<!-- Экран выбора уровня -->
+<div class="screen" id="level-selection-screen">
+  <h1>Выберите уровень</h1>
+  <button onclick="selectLevel(1)">Уровень 1</button>
+  <button onclick="selectLevel(2)">Уровень 2</button>
+  <button onclick="selectLevel(3)">Уровень 3</button>
+</div>
+
+<!-- Игровой экран -->
+<div class="screen" id="game-screen">
+  <h2 id="level-title"></h2>
+  <p id="game-instructions"></p>
+
+  <!-- Игровая зона (переключается между задачами) -->
+  <div id="game-area"></div>
+
+  <!-- Панель статусов -->
+  <div id="timer">Время: <span id="time-left">60</span> сек.</div>
+  <div class="score">Очки: <span id="score">0</span></div>
+
+  <button onclick="endGame()">Завершить игру</button>
+</div>
+
+<!-- Экран завершения -->
+<div class="screen" id="end-screen">
+  <h1>Игра окончена!</h1>
+  <p id="final-score"></p>
+  <button onclick="restartGame()">Играть снова</button>
+  <button onclick="viewLeaderboard()">Рейтинг</button>
+</div>
+
+<script src="coursework.js"></script>
+</body>
+</html>

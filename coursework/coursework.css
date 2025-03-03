@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: lightsteelblue;
+    color: #444444;
+    margin: 0;
+    padding-top: 50px; /* отступ сверху */
+    min-width: 800px;
+}
+
+/* ---------- Экраны ---------- */
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.screen.active {
+    display: flex;
+}
+
+/* ---------- Кнопки, поля, заголовки ---------- */
+button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: dimgrey;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: gray;
+}
+
+#player-name {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid gray;
+    margin: 10px 0;
+}
+
+.score, #timer {
+    font-size: 20px;
+    margin: 15px;
+}
+
+/* ---------- Игровые элементы ---------- */
+.number, .sequence, .math-element {
+    display: inline-block;
+    padding: 15px;
+    margin: 10px;
+    font-size: 22px;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s;
+    min-width: 40px;
+    text-align: center;
+}
+.sequence {
+    width: 200px;
+    height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.number:hover,
+.sequence:hover,
+.math-element:hover {
+    transform: scale(1.1);
+}
+
+/* Состояния */
+.correct {
+    background-color: green !important;
+    color: white;
+}
+.incorrect {
+    background-color: red !important;
+    color: white;
+    animation: shake 0.3s;
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Игровая зона */
+#game-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+#sequence-pool {
+    height: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Зоны для перетаскивания */
+.drop-zone {
+    border: 2px dashed white;
+    padding: 20px;
+    margin: 20px;
+    min-width: 150px;
+    min-height: 70px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* 3 уровень */
+.math-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.math-elements-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 80px;
+    margin-bottom: 20px;
+}
+.expression-zone {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+}
+#expression-area {
+    flex: 1;
+    margin-right: 30px;
+    flex-wrap: nowrap;
+}
+#result-block {
+    font-size: 25px;
+    width: 60px;
+    text-align: center;
+    padding: 20px;
+    margin-left: 30px;
+    margin-top: 30px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+
+/* Анимация для хаотичного движения */
+@keyframes floatAround1 {
+    0%   { transform: translate(0px, 0px) rotate(0deg); }
+    25%  { transform: translate(15px, -10px) rotate(10deg); }
+    50%  { transform: translate(-20px, 10px) rotate(-5deg); }
+    75%  { transform: translate(10px, 5px) rotate(3deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes floatAround2 {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    25%  { transform: translate(-10px, 15px) rotate(-15deg); }
+    50%  { transform: translate(20px, -5px) rotate(5deg); }
+    75%  { transform: translate(-5px, -10px) rotate(-10deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes floatAround3 {
+    0%   { transform: translate(0px, 0px) rotate(0deg); }
+    20%  { transform: translate(8px, -8px) rotate(8deg); }
+    40%  { transform: translate(-12px, 15px) rotate(-4deg); }
+    60%  { transform: translate(10px, -5px) rotate(6deg); }
+    80%  { transform: translate(-5px, -10px) rotate(-2deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+
